@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Our Love Story</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="LoveYou/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="LoveYou/jquery.js"></script>
+<script type="text/javascript" src="LoveYou/garden.js"></script>
+<script type="text/javascript" src="LoveYou/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br>
+			<span class="space"><span class="comments">*2018—04-20,</span><br>
+			<span class="space"><span class="comments">*2018-04-23.</span><br>
+			<span class="space"><span class="comments">*/</span><br>
+			My name = <span class="keyword">"杜宪"</span><br>
+			You name = <span class="keyword">"田丽杰"</span><br>
+			<span class="comments">// 我想要记住我们在一起的时间.</span><br>
+			I want to remember our time together;<br>
+			<span class="comments">// 我只有一个梦想.</span><br>
+			I has but one dream;<br>
+			<span class="comments">// 我想要你快乐幸福到永远.</span><br>
+			I wants you could well have been happy forever;
+			<br>
+			<br>
+			I want to say:<br>
+			I love you;<br>
+		</span></span></span></span></span></span></div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words" >
+				<div id="messages">
+					丽杰，往后的每一分每一秒都会在此记录着我们
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br>
+					<div class="signature">- 杜宪</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date("2018-04-15 17:00:00");
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "你的浏览器不支持HTML5<br/>推荐使用Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+
+</body></html>
