@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对账计算器</title>
+</head>
+
+<body>
+    <h2>结果：<span></span></h2>
+    <div class="main">
+        <dl>
+            <dt>订单金额：</dt>
+            <dd><input type="number" name="money" id="money"></dd>
+        </dl>
+        <dl>
+            <dt>订单人数：</dt>
+            <dd><input type="number" name="number" id="number"></dd>
+        </dl>
+        <dl>
+            <dt>返利比例：</dt>
+            <dd><input type="number" name="ratio" id="ratio" value="3">%</dd>
+        </dl>
+        <dl>
+            <dt>优惠金额：</dt>
+            <dd><input type="number" name="discounts" id="discounts"></dd>
+        </dl>
+        <a href="#" class="btn-num">计算</a>
+    </div>
+</body>
+<script>
+    "use strict"
+    var dMoney = document.querySelector("#money"),
+        dNumber = document.querySelector("#number"),
+        dRatio = document.querySelector("#ratio"),
+        dDiscounts = document.querySelector("#discounts"),
+        dBtnNum = document.querySelector(".btn-num"),
+        dSpan = document.querySelector("h2>span")
+    dBtnNum.addEventListener('click', function () {
+        var dNum = (dMoney.value * dNumber.value) * (1 - dRatio.value / 100) - (dDiscounts.value * dNumber.value)
+        dSpan.innerHTML = dNum
+    })
+</script>
+
+</html>
